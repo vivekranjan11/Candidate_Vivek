@@ -1,0 +1,20 @@
+<apex:page Controller="jobdetails">
+    <apex:form >
+        <apex:pageBlock title="Job_Details">
+            <apex:pageBlockTable columns="1" value="{!jobVivek}" var="c">
+                <apex:column value="{!c.Job_types__c}"/>
+                <apex:column value="{!c.Required_Skills__c}"/>
+                <apex:column value="{!c.Qualification_Required__c}"/>
+                <apex:column value="{!c.Certification_Required__c}"/>
+                <apex:column value="{!c.Manager__c}"/>
+                <apex:inputField value="{!c.Number_of_position__c}"/>
+            </apex:pageBlockTable>
+            <!--<apex:pageBlockButtons >
+<apex:commandButton action="{!save}" value="Save"/>
+</apex:pageBlockButtons>-->
+        </apex:pageBlock>
+        <apex:pageBlock title="Related List">
+            <c:RelatedListComponent records="{!records}" fields="{!fields}"></c:RelatedListComponent>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

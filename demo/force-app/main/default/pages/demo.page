@@ -1,0 +1,86 @@
+<apex:page controller="JobRegistrationCustom"> 
+    
+    <script type="text/javascript">
+    
+    function alerts()
+    {
+        
+        if((document.getElementById('{!$Component.frm.blk.blks.sal}').value==''))
+        {
+            alert('Please return salary...........');
+            return false;
+            
+        }
+         else if((document.getElementById('{!$Component.frm.blk.blks.qua}').value==''))
+        {
+            alert('Please select Qualification Required...........');
+            return false;
+            
+        }
+        else if((document.getElementById('{!$Component.frm.blk.blks.req}').value==''))
+        {
+            alert('Please select Required Skills...........');
+            return false;
+            
+        }
+        else if((document.getElementById('{!$Component.frm.blk.blks.req}').value==''))
+        {
+            alert('Please select Required Skills...........');
+            return false;
+            
+        }
+        
+        else if((document.getElementById('{!$Component.frm.blk.blks.des}').value==''))
+        {
+            alert('Please enter description...........');
+            return false;
+            
+        }
+        else{
+
+        	return true;
+            }
+    }
+    </script>
+    
+    <div style="background-color: aqua;padding:20px">
+        <h1 style="font-size:15px">
+            Job Wizard
+        </h1>
+    </div>
+    
+    <div style="text-align:center;">
+        <apex:image url="{!$Resource.Application_Image}" />
+    </div>
+    
+    <apex:form id="frm">
+     <apex:actionFunction action="{!savejob_vivek}" name="savejob_vivek"/>    
+        <apex:pageBlock id="blk" >
+            <apex:pageBlockSection id="blks">
+
+                    <div>
+                        <h1>
+                            Job Registeration step-1
+                        </h1>
+                        <apex:inputField value="{!cand.Manager__c}"   id="mgr"/><br/><br/>
+                        <apex:inputField value="{!cand.Job_types__c}"   id="jtype"/><br/><br/>
+                        <apex:inputField value="{!cand.Qualification_Required__c}"   id="qua"/><br/><br/>
+                        <apex:inputField value="{!cand.Required_Skills__c}"   id="req"/><br/><br/>
+                        <apex:inputField value="{!cand.Number_of_position__c}"   id="pos"/><br/><br/>
+                        <apex:inputField value="{!cand.Salary_offered__c}"   id="sal"/><br/><br/>
+                        <apex:inputField value="{!cand.Certification_Required__c}"   id="cer"/><br/><br/>
+                        <apex:inputField value="{!cand.Expire_on__c}"   id="exp"/><br/><br/>
+                        <apex:inputField value="{!cand.Active__c}"   id="act"/><br/><br/>
+                        <apex:inputTextarea value="{!cand.Description__c}"   id="des"/><br/><br/>                        
+                    </div>
+
+            </apex:pageBlockSection>
+            <div style="text-align:center;">
+                <apex:pageBlockButtons location="bottom" styleClass="button">
+                    <apex:commandButton value="Save" onclick=" return alerts();" action="{!savejob_vivek}"/>
+                </apex:pageBlockButtons>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

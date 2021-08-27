@@ -1,0 +1,27 @@
+<apex:page Controller="JobRegistrationCustom" >
+    <apex:form >
+        <apex:pageBlock title="Candidate" mode="edit">
+            <apex:commandButton value="Save" action="{!savejob_vivek}"/>
+            <apex:commandButton value="cancel" action="{!canceljob_vivek}"/>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!cand.Name__c}" rendered="true" label="job name"/>
+                <apex:inputField value="{!cand.Description__c}" rendered="true" label="Description"/>
+                <apex:inputField value="{!cand.Number_of_position__c}" rendered="true" label="No of position"/>
+                <apex:inputField value="{!cand.Expire_on__c}" rendered="true" label="Expire on"/>
+                <apex:inputField value="{!cand.Active__c}" rendered="true" label="Active"/>
+                <apex:inputField value="{!cand.Salary_offered__c}" rendered="true" label="Salary offered"/>
+                <apex:inputField value="{!cand.Total_applicants__c}" rendered="true" label="Total aaplicant"/>
+                <apex:inputField value="{!cand.Hired_applicants__c}" rendered="true" label="Hired applicant"/>
+                <apex:inputField value="{!cand.Job_types__c}" rendered="true" label="Types of job"/>
+                <apex:inputField value="{!cand.Required_Skills__c}" rendered="true" label="Required skills"/>
+                <apex:inputField value="{!cand.Qualification_Required__c}" rendered="true" label="Qualification"/>
+                <apex:inputField value="{!cand.Certification_Required__c}" rendered="true" label="Certificate required"/>
+                <apex:inputField value="{!cand.Manager__c}" rendered="true" label="Manager"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+</apex:page>

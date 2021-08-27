@@ -1,0 +1,25 @@
+<apex:page Controller="CandidateRegistrationCustom" >
+    <apex:form >
+        <apex:pageBlock title="Candidate" mode="edit">
+            <apex:commandButton value="Save" action="{!savecandidate}"/>
+            <apex:commandButton value="cancel" action="{!cancelcandidate}"/>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!can.Salutation__c}" rendered="true" label="Salutation"/>
+                <apex:inputField value="{!can.Fist_name__c}" rendered="true" label="First name"/>
+                <apex:inputField value="{!can.Last_name__c}" rendered="true" label="Last name"/>
+                <apex:inputField value="{!can.Email__c}" rendered="true" label="Email"/>
+                <apex:inputField value="{!can.DOB__c}" rendered="true" label="Date Of Birth"/>
+                <apex:inputField value="{!can.Application_date__c}" rendered="true" label="Application Date"/>
+                <apex:inputField value="{!can.Expected_salary__c}" rendered="true" label="Expected Salary"/>
+                <apex:inputField value="{!can.job__c}" rendered="true" label="Job"/>
+                <apex:inputField value="{!can.Country__c}" rendered="true" label="Country"/>
+                <apex:inputField value="{!can.State__c}" rendered="true" label="States"/>
+                <apex:inputField value="{!can.Status__c}" rendered="true" label="Status"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+</apex:page>

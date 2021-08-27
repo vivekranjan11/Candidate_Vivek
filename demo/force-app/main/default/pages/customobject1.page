@@ -1,0 +1,66 @@
+<apex:page controller="JobRegistrationCustom">
+    <apex:stylesheet value="{!$Resource.Application_css}"/>   
+    <div style="background-color: blue;padding:20px">
+        <h1 style="font-size:15px">
+            Job Wizard
+        </h1>
+    </div>
+    <div style="text-align:center;">
+        <apex:image url="{!$Resource.Application_Image}" />
+    </div>
+    <html>
+        <head>
+            <script>
+            
+            // <apex:includeScript value="{!$Resource.Application_js}"/> 
+            
+            function alerts()
+            {
+                if((document.getElementById('{!$Component.frm.blk.blks.req}').value==''))
+                {
+                    alert('Please return first name...........');
+                    return false;
+                }
+                if((document.getElementById('{!$Component.frm.blk.blks.sal}').value==''))
+                {
+                    alert('Please return salary...........');
+                    return false;
+                }
+                
+                
+            }
+            
+            }
+            </script>
+        </head>
+        <body>
+            <apex:form id="frm">
+                <apex:actionFunction action="{!savejob_vivek}" name="save"/>
+                <apex:pageBlock id="blk" >
+                    <apex:pageBlockSection id="blks">
+                        <div>
+                            
+                            <span> Job Registeration
+                                step-1</span>
+                            <apex:inputField value="{!cand.Manager__c}" StyleClass="input" id="mgr"/><br/><br/>
+                            <apex:inputField value="{!cand.Job_types__c}" StyleClass="input" id="jtype"/><br/><br/>
+                            <apex:inputField value="{!cand.Qualification_Required__c}" StyleClass="input" id="qua"/><br/><br/>
+                            <apex:inputField value="{!cand.Required_Skills__c}" StyleClass="input" id="req"/><br/><br/>
+                            <apex:inputField value="{!cand.Number_of_position__c}" StyleClass="input" id="pos"/><br/><br/>
+                            <apex:inputField value="{!cand.Salary_offered__c}" StyleClass="input" id="sal"/><br/><br/>
+                            <apex:inputField value="{!cand.Certification_Required__c}" StyleClass="input" id="cer"/><br/><br/>
+                            <apex:inputField value="{!cand.Expire_on__c}" StyleClass="input" id="exp"/><br/><br/>
+                            <apex:inputField value="{!cand.Active__c}" StyleClass="input" id="act"/><br/><br/>
+                            <apex:inputTextarea value="{!cand.Description__c}" StyleClass="input" id="des"/><br/><br/>                        </div>
+                    </apex:pageBlockSection>
+                    <div style="text-align:center;">
+                        <apex:pageBlockButtons location="bottom" styleClass="button">
+                            <apex:commandButton value="Save" onclick="alerts();" action="{!savejob_vivek}"/>
+                            <apex:commandButton value="Cancel" action="{!canceljob_vivek}"/>
+                        </apex:pageBlockButtons>
+                    </div>
+                </apex:pageBlock>
+            </apex:form>
+        </body>
+    </html>
+</apex:page>

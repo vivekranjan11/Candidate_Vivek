@@ -1,0 +1,27 @@
+<apex:page standardController="job_vivek__c" >
+    <apex:form >
+        <apex:pageBlock title="job" mode="edit">
+            <apex:commandButton value="save" action="{!save}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!job_vivek__c.Name__c}" rendered="true" label="job name"/>
+                <apex:inputField value="{!job_vivek__c.Description__c}" rendered="true" label="Description"/>
+                <apex:inputField value="{!job_vivek__c.Number_of_position__c}" rendered="true" label="No of position"/>
+                <apex:inputField value="{!job_vivek__c.Expire_on__c}" rendered="true" label="Expire on"/>
+                <apex:inputField value="{!job_vivek__c.Active__c}" rendered="true" label="Active"/>
+                <apex:inputField value="{!job_vivek__c.Salary_offered__c}" rendered="true" label="Salary offered"/>
+                <apex:inputField value="{!job_vivek__c.Total_applicants__c}" rendered="true" label="Total aaplicant"/>
+                <apex:inputField value="{!job_vivek__c.Hired_applicants__c}" rendered="true" label="Hired applicant"/>
+                <apex:inputField value="{!job_vivek__c.Job_types__c}" rendered="true" label="Types of job"/>
+                <apex:inputField value="{!job_vivek__c.Required_Skills__c}" rendered="true" label="Required skills"/>
+                <apex:inputField value="{!job_vivek__c.Qualification_Required__c}" rendered="true" label="Qualification"/>
+                <apex:inputField value="{!job_vivek__c.Certification_Required__c}" rendered="true" label="Certificate required"/>
+                <apex:inputField value="{!job_vivek__c.Manager__c}" rendered="true" label="Manager"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+</apex:page>

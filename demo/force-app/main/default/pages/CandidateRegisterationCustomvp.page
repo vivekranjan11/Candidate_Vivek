@@ -1,0 +1,75 @@
+<apex:page controller="CandidateRegistrationCustom"> 
+    <script type="text/javascript">
+    function alerts()
+    {
+        if((document.getElementById('{!$Component.frm.blk.blks.sal}').value==''))
+        {
+            alert('Please return salary...........');
+            return false;
+        }
+        else if((document.getElementById('{!$Component.frm.blk.blks.cont}').value==''))
+        {
+            alert('Please select Country............');
+            return false;
+        }
+            else if((document.getElementById('{!$Component.frm.blk.blks.app}').value==''))
+            {
+                alert('Please select Application date...........');
+                return false;
+            }
+                else if((document.getElementById('{!$Component.frm.blk.blks.age}').value==''))
+                {
+                    alert('Please select Age...........');
+                    return false;
+                }
+        
+                    else if((document.getElementById('{!$Component.frm.blk.blks.str}').value==''))
+                    {
+                        alert('Please enter state...........');
+                        return false;
+                    }
+                        else{
+                            return true;
+                        }
+    }
+    </script>
+    <div style="background-color: aqua;padding:20px">
+        <h1 style="font-size:15px">
+            Job Wizard
+        </h1>
+    </div>
+    <div style="text-align:center;">
+        <apex:image url="{!$Resource.Application_Image}" />
+    </div>
+    <apex:form id="frm">
+        <apex:actionFunction action="{!savecandidate}" name="savecandidate"/>    
+        <apex:pageBlock id="blk" >
+            <apex:pageBlockSection id="blks">
+                
+                <div>
+                    <h1>
+                        Job Registeration step-1
+                    </h1>
+                    <apex:inputField value="{!can.Application_date__c}"   id="app"/><br/><br/>
+                    <apex:inputField value="{!can.Age__c}" id="age"/><br/><br/>
+                    <apex:inputField value="{!can.Country__c}"   id="cont"/><br/><br/>
+                    <apex:inputField value="{!can.DOB__c}"   id="dob"/><br/><br/>
+                    <apex:inputField value="{!can.Email__c}"   id="eml"/><br/><br/>
+                    <apex:inputField value="{!can.Expected_salary__c}"   id="salr"/><br/><br/>
+                    <apex:inputField value="{!can.Fist_name__c}"   id="fname"/><br/><br/>
+                    <apex:inputField value="{!can.Salutation__c}"   id="sr"/><br/><br/>
+                    <apex:inputField value="{!can.Status__c}"   id="st"/><br/><br/>
+                    <apex:inputField value="{!can.State__c}"   id="stat"/><br/><br/>
+                    <apex:inputField value="{!can.job__c}"   id="jb"/><br/><br/>
+                    <apex:inputField value="{!can.Last_name__c}"   id="lnam"/><br/><br/>
+                    <apex:inputField value="{!can.Full_name__c}"   id="fnn"/><br/><br/>
+             </div>
+            </apex:pageBlockSection>
+            <div style="text-align:center;">
+                <apex:pageBlockButtons location="bottom" styleClass="button">
+                    <apex:commandButton value="Save" onclick=" return alerts();" action="{!savecandidate}"/>
+                </apex:pageBlockButtons>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

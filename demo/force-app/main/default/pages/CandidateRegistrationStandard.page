@@ -1,0 +1,25 @@
+<apex:page standardController="candidate__c" >
+    <apex:form >
+        <apex:pageBlock title="Candidate" mode="edit">
+            <apex:commandButton value="save" action="{!save}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!candidate__c.Salutation__c}" rendered="true" label="Salutation"/>
+                <apex:inputField value="{!candidate__c.Fist_name__c}" rendered="true" label="First name"/>
+                <apex:inputField value="{!candidate__c.Last_name__c}" rendered="true" label="Last name"/>
+                <apex:inputField value="{!candidate__c.Email__c}" rendered="true" label="Email"/>
+                <apex:inputField value="{!candidate__c.DOB__c}" rendered="true" label="Date Of Birth"/>
+                <apex:inputField value="{!candidate__c.Application_date__c}" rendered="true" label="Application Date"/>
+                <apex:inputField value="{!candidate__c.Expected_salary__c}" rendered="true" label="Expected Salary"/>
+                <apex:inputField value="{!candidate__c.job__c}" rendered="true" label="Job"/>
+                <apex:inputField value="{!candidate__c.Country__c}" rendered="true" label="Country"/>
+                <apex:inputField value="{!candidate__c.State__c}" rendered="true" label="States"/>
+                <apex:inputField value="{!candidate__c.Status__c}" rendered="true" label="Status"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+</apex:page>
